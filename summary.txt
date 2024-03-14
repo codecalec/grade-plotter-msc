@@ -1,0 +1,8 @@
+Easy Assignments:
+Assignment 5	Avg=0.85
+Assignment 9	Avg=0.83
+Assignment 13	Avg=0.85
+Hard Assignments:
+Assignment 5	Avg=0.85
+Assignment 9	Avg=0.83
+Assignment 13	Avg=0.85

@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-
 def save_outlying_assignments(averages, filename):
 
     # Find assignments which are sufficiently higher or lower than the mean
@@ -17,14 +16,13 @@ def save_outlying_assignments(averages, filename):
         print("Hard Assignments:", file=f)
         for idx, average in easy_assignments.items(): 
             print("Assignment {}\tAvg={:.2f}".format(idx, average), file=f)
-    
 
 def main():
 
     # Double check the csv is properly formatted
     # All entries should be in decimal (80% -> 0.80)
     # Might need to look at https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
-    df = pd.read_csv("grades_2014.csv")
+    df = pd.read_csv("grades_correct.csv")
 
     # Get class average for each assignment
     assignment_avg = df.mean(axis=1)
@@ -37,10 +35,9 @@ def main():
     plt.legend()
     plt.xlabel("Assignment average")
     plt.savefig("assignments.png", dpi=200)
-    
+
     # Save the sufficiently outlying assignments
-    save_assignments(assignment_avg, "summary.txt")
+    save_outlying_assignments(assignment_avg, "summary.txt")
 
     print("Done!")
-
 main()
