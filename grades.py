@@ -30,7 +30,7 @@ def main():
     assignment_avg = df.mean(axis=1)
 
     # Plot class averages with the mean and std of the assignment marks
-    print("Saving plot to assignments.png")
+    print("Saving plot to png")
     plt.hist(assignment_avg, bins=100)
     plt.axvline(assignment_avg.mean(), color="red", linestyle="--", label=r"Average")
     plt.axvline(assignment_avg.mean() - assignment_avg.std(), color="grey", linestyle="--", label=r"1$\sigma$")
